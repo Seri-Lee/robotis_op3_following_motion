@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="video" default="0" />
+   <arg name="video_width" default="640" />
+   <arg name="video_height" default="480" />
+   <arg name="video_visualize" default="false" />
+
+   <include file="$(find video_stream_opencv)/launch/camera.launch">
+        <!-- node name and ros graph name -->
+        <arg name="camera_name" value="camera" />
+        <!-- means video device 0, /dev/video0 -->
+        <arg name="video_stream_provider" value="$(arg video)" />
+        <!-- throttling the querying of frames to -->
+        <arg name="fps" value="30" />
+        <!-- setting frame_id -->
+        <arg name="frame_id" value="camera_frame" />
+        <!-- camera info loading, take care as it needs the "file:///" at the start , e.g.:
+        "file:///$(find your_camera_package)/config/your_camera.yaml" -->
+        <arg name="camera_info_url" value="file:///$(find openpose_ros_node)/config/camera.yaml" />
+        <!-- flip the image horizontally (mirror it) -->
+        <arg name="flip_horizontal" value="false" />
+        <!-- flip the image vertically -->
+        <arg name="flip_vertical" value="false" />
+        <!-- force a width and height, 0 means no forcing -->
+        <arg name="width" value="$(arg video_width)"/>
+        <arg name="height" value="$(arg video_height)"/>
+        <!-- visualize on an image_view window the stream generated -->
+        <arg name="visualize" value="$(arg video_visualize)" />
+    </include>
+
+    <node name="openpose_ros_node" pkg="openpose_ros_node" type="openpose_ros_node" output="screen">
+        <param name="camera" value="/camera/image_raw" />
+        <param name="result_image_topic" value="/openpose/image_raw" />
+<!--
+        <param name="resolution" value="$(arg video_width)x$(arg video_height)" />
+-->
+        <!-- <param name="resolution" value="480x320" /> -->
+        <param name="resolution" value="640x480" />
+        <param name="face" value="false" />
+        <param name="num_gpu_start" value="0" />
+        <param name="no_display" value="false" />
+    </node>
+
+    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/openpose/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+    
+    <node name="op3_following_motion_node" pkg="robotis_op3_following_motion" type="robotis_op3_following_motion_node" output="screen"/>
+
+</launch>

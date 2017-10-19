@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>robotis_op3_following_motion</name>
+  <version>0.0.1</version>
+  <description>The robotis_op3_following_motion package</description>
+
+  <maintainer email="lsr5958@gmail.com">seri lee</maintainer>
+  <license>BSD</license>
+  <author email="lsr5958@gmail.com">seri lee</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>op3_action_module_msgs</build_depend>
+  <build_depend>openpose_ros_msgs</build_depend>
+  <build_depend>robotis_controller_msgs</build_depend>
+  <build_depend>robotis_math</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <run_depend>op3_action_module_msgs</run_depend>
+  <run_depend>openpose_ros_msgs</run_depend>
+  <run_depend>robotis_controller_msgs</run_depend>
+  <run_depend>robotis_math</run_depend>
+  <run_depend>roslib</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <export>
+  </export>
+</package>
