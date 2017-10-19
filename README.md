@@ -26,7 +26,8 @@ This demo will manipulate arm roll and elbow joint in order to imitate the skele
  - external PC  
      1. [Install openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation.md)  
 
-     2. [Install openpose_ros](https://github.com/ildoonet/ros-openpose#installation)  
+     2. [Install openpose_ros](https://github.com/Seri-Lee/ros-openpose#installation)  
+       It's modified since original source code does not present skeleton image.
 
      3. Install robotis_op3_following_motion  
         ```
