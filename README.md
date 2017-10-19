@@ -5,7 +5,7 @@ The motion following demo uses openpose which is available as a ROS package.
  | Reference : [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)  
  | Reference : [openpose_ros](https://github.com/ildoonet/ros-openpose)  
 As the openpose is based on machine learning algorithm, additional PC with nVidia GPU will be required in order to process the algorithm for ROBOTIS-OP3.  
-Please refer to below configuration for the motion following demo. 
+Please refer to below configuration for the motion following demo.
 ![System Structure](https://github.com/Seri-Lee/robotis_op3_following_motion/blob/master/doc/system_structure.png?raw=true)
 
 This demo will manipulate arm roll and elbow joint in order to imitate the skeleton recognized via camera.
@@ -30,10 +30,10 @@ This demo will manipulate arm roll and elbow joint in order to imitate the skele
 
      3. Install robotis_op3_following_motion  
        ```
-       $ cd ~/catkin_ws/src
-       $ git clone https://github.com/Seri-Lee/robotis_op3_following_motion.git
-       $ cd ~/catkin_ws
-       $ catkin_make
+       $ cd ~/catkin_ws/src  
+       $ git clone https://github.com/Seri-Lee/robotis_op3_following_motion.git  
+       $ cd ~/catkin_ws  
+       $ catkin_make  
        ```
 
 
