@@ -29,12 +29,12 @@ This demo will manipulate arm roll and elbow joint in order to imitate the skele
      2. [Install openpose_ros](https://github.com/ildoonet/ros-openpose#installation)  
 
      3. Install robotis_op3_following_motion  
-       ```
-       $ cd ~/catkin_ws/src  
-       $ git clone https://github.com/Seri-Lee/robotis_op3_following_motion.git  
-       $ cd ~/catkin_ws  
-       $ catkin_make  
-       ```
+        ```
+        $ cd ~/catkin_ws/src  
+        $ git clone https://github.com/Seri-Lee/robotis_op3_following_motion.git  
+        $ cd ~/catkin_ws  
+        $ catkin_make  
+        ```
 
 
 ## 3. How to run
